@@ -1,5 +1,6 @@
 import time
 from flask import Flask
+import course_searcher
 
 from flask_cros import CORS
 CORS(app, resources={r'/*':{'origins': '*'}})
