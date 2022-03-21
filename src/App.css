@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  /* style={{ background: "url(/images/welcome_board/bg-stars.svg), #121928" }} */
+  background-color: #282c34;
 }
 
 .App-logo {

@@ -40,7 +40,7 @@ function handlePostQuery(query){
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
-  const [name, setName] = useState('');
+  const [name, setName] = useState('cis x x x');
 
   const [course, setCourse] = useState('');
 
@@ -99,7 +99,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style={{ background: "#61dafb" }}>
       {/* <header className="App-header">
 
         ... no changes in this part ...
@@ -107,13 +107,15 @@ function App() {
         <p>The current time is {currentTime}.</p>
       </header> */}
 
-    <p>The current time is {currentTime}.</p>
+    <p style={{ background: "#61dafb" }}>The current time is {currentTime}.</p>
 
     
     <p>The current data is {course}.</p>
 
       <div>
-
+      <h1>
+        Example input: cis x x x  
+      </h1>
       <form onSubmit = {handleSubmit}>
             <input onChange = {(e) => setName(e.target.value)} value = {name}></input>
             <button type = 'submit'>Click to submit</button>
