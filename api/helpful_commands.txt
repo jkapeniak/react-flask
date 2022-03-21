@@ -17,3 +17,12 @@ http://131.104.49.112/api/query
 https://vovaprivalov.medium.com/solve-cors-problem-in-flask-rest-api-47250f1c77fa
 
 http://localhost:3000/
+
+sudo nano /etc/systemd/system/myproject.service
+
+uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
+
+
+sudo nano /etc/nginx/sites-available/myproject
+
+https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project
