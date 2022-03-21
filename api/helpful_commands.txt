@@ -1,0 +1,19 @@
+sudo cp -r /home/sysadmin/Sprint6/build/. /var/www/html
+
+
+ vi myproject.py 
+
+sudo systemctl restart myproject.service
+
+sudo systemctl status myproject
+https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
+
+https://stackoverflow.com/questions/58345210/get-data-from-react-to-flask-via-post
+
+http://131.104.49.112/
+
+http://131.104.49.112/api/query
+
+https://vovaprivalov.medium.com/solve-cors-problem-in-flask-rest-api-47250f1c77fa
+
+http://localhost:3000/
