@@ -129,3 +129,6 @@ def open_courses():
 
     for i in json_data:
         courses.append(i)
+
+
+print(search_course(['cis', 'x', '0.75', 'f']))

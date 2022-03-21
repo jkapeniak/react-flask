@@ -26,3 +26,5 @@ uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
 sudo nano /etc/nginx/sites-available/myproject
 
 https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project
+
+https://blog.devgenius.io/using-nginx-to-serve-react-application-static-vs-proxy-69b85f368e6c
