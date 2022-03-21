@@ -14,6 +14,7 @@ function handlePostQuery(query){
       axios.post('http://131.104.49.112/api/query', myParams)
           .then(function(response){
               console.log(response);
+              console.log("posted successfully")
      //Perform action based on response
       })
       .catch(function(error){
