@@ -13,8 +13,13 @@ function handlePostQuery(query){
   if (query !== "") {
       axios.post('http://131.104.49.112/api/query', myParams)
           .then(function(response){
-              console.log(response);
+              
               console.log("posted successfully")
+
+              console.log(response.data)
+
+              console.log("Course")
+
      //Perform action based on response
       })
       .catch(function(error){
@@ -35,9 +40,57 @@ function handlePostQuery(query){
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
+  const [name, setName] = useState('');
+
+  const [course, setCourse] = useState('');
 
 
-  handlePostQuery("very nice how much")
+
+
+  function handlePostQuery(query){
+
+    var myParams = {
+        data: query
+    }
+  
+    if (query !== "") {
+        axios.post('http://131.104.49.112/api/query', myParams)
+            .then(function(response){
+                
+                console.log("posted successfully")
+
+                console.log(response.data)
+                setCourse(JSON.stringify(response.data));
+
+                // console.log(JSON.stringify({ x: 5, y: 6 }));
+
+
+  
+                console.log("Course")
+  
+       //Perform action based on response
+        })
+        .catch(function(error){
+            console.log(error);
+       //Perform action based on error
+        });
+    } else {
+        alert("The search query cannot be empty")
+    }
+  }
+    
+    const handleSubmit = (e) => {
+    
+        e.preventDefault();
+
+        console.log(`Form submitted, ${name}`);   
+        
+        console.log({name})
+        
+        handlePostQuery({name})
+
+    }
+
 
   useEffect(() => {
     fetch('http://131.104.49.112/api/time').then(res => res.json()).then(data => {
@@ -47,12 +100,28 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
 
         ... no changes in this part ...
 
         <p>The current time is {currentTime}.</p>
-      </header>
+      </header> */}
+
+    <p>The current time is {currentTime}.</p>
+
+    
+    <p>The current data is {course}.</p>
+
+      <div>
+
+      <form onSubmit = {handleSubmit}>
+            <input onChange = {(e) => setName(e.target.value)} value = {name}></input>
+            <button type = 'submit'>Click to submit</button>
+        </form>
+
+      </div>
+      
+
     </div>
   );
 }
